@@ -12,6 +12,13 @@ import java.util.UUID;
  */
 public class ServerHandler extends SimpleChannelInboundHandler<String> {
 
+    /**
+     * 服务端收到客户端发来消息后会回调此函数，向客户端做出响应
+     *
+     * @param ctx
+     * @param msg
+     * @throws Exception
+     */
     @Override
     protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
         System.out.println(ctx.channel().remoteAddress() + msg);
@@ -20,6 +27,7 @@ public class ServerHandler extends SimpleChannelInboundHandler<String> {
 
     /**
      * 遇到异常就关闭连接
+     *
      * @param ctx
      * @param cause
      * @throws Exception

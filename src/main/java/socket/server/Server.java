@@ -29,7 +29,7 @@ public class Server {
                     .channel(NioServerSocketChannel.class)
                     .childHandler(new ServerInitializer());
 
-            //4.给启动器绑定监听端口
+            //4.给启动器绑定监听端口，以此端口对外提供服务
             ChannelFuture channelFuture = serverBootstrap.bind(8081).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
