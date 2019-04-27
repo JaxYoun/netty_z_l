@@ -27,4 +27,6 @@ dependencies {
 
     //syntax 2.
     compile("io.netty:netty-all:4.1.31.Final")
+    compile ('com.google.protobuf:protobuf-java:3.7.1')
+    compile ('com.google.protobuf:protobuf-java-util:3.7.1')
 }
