@@ -30,8 +30,12 @@ public class HeartBeatServer {
             //3.给启动器配置事件循环组、通道、初始化器。
             serverBootstrap.group(bossGroup, workerGroup)
                     .channel(NioServerSocketChannel.class)
-                    .handler(new LoggingHandler(LogLevel.INFO))  //boss；添加日志处理器
-                    .childHandler(null);  //worker
+
+                    //*handler是针对boss来说的，childHandler是针对worker来说的，各自工作的地方不一样
+                    //给bossGroup；添加日志处理器
+                    .handler(new LoggingHandler(LogLevel.INFO))
+                    //给workerGroup：添加处理器初始化器
+                    .childHandler(new HeartBeatInitializer());
 
             //4.给启动器绑定监听端口，以此端口对外提供服务
             ChannelFuture channelFuture = serverBootstrap.bind(8082).sync();
