@@ -5,7 +5,12 @@ import protobuf.generated.DataInfo;
 /**
  * @author: Yang
  * @date: 2019/4/27 21:59
- * @description: 在同一个jvm进程中：先构造一个对象，将对象序列化，然后再反序列化的到对象
+ * @description:
+ * 在同一个jvm进程中：
+ * 1.先构造一个对象
+ * 2.将对象序列化成二进制数据
+ * 3.然后再将二进制数据反序列化，提取出对象
+ * 4.调用提取的对象的方法，进行功能操作
  */
 public class ProtobufTest {
 
