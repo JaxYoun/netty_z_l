@@ -69,6 +69,10 @@ public final class MyDataInfo {
     public protobuf.generated.MyDataInfo.MyMessage.DataBodyCase getDataBodyCase();
   }
   /**
+   * <pre>
+   *目录类
+   * </pre>
+   *
    * Protobuf type {@code generated.MyMessage}
    */
   public  static final class MyMessage extends
@@ -647,6 +651,10 @@ public final class MyDataInfo {
       return builder;
     }
     /**
+     * <pre>
+     *目录类
+     * </pre>
+     *
      * Protobuf type {@code generated.MyMessage}
      */
     public static final class Builder extends
@@ -1398,6 +1406,10 @@ public final class MyDataInfo {
         getAddressBytes();
   }
   /**
+   * <pre>
+   *兄弟类1
+   * </pre>
+   *
    * Protobuf type {@code generated.Person}
    */
   public  static final class Person extends
@@ -1778,6 +1790,10 @@ public final class MyDataInfo {
       return builder;
     }
     /**
+     * <pre>
+     *兄弟类1
+     * </pre>
+     *
      * Protobuf type {@code generated.Person}
      */
     public static final class Builder extends
@@ -2217,6 +2233,10 @@ public final class MyDataInfo {
     int getLeg();
   }
   /**
+   * <pre>
+   *兄弟类2
+   * </pre>
+   *
    * Protobuf type {@code generated.Dog}
    */
   public  static final class Dog extends
@@ -2533,6 +2553,10 @@ public final class MyDataInfo {
       return builder;
     }
     /**
+     * <pre>
+     *兄弟类2
+     * </pre>
+     *
      * Protobuf type {@code generated.Dog}
      */
     public static final class Builder extends
@@ -2890,6 +2914,10 @@ public final class MyDataInfo {
         getCityBytes();
   }
   /**
+   * <pre>
+   *兄弟类3
+   * </pre>
+   *
    * Protobuf type {@code generated.Cat}
    */
   public  static final class Cat extends
@@ -3234,6 +3262,10 @@ public final class MyDataInfo {
       return builder;
     }
     /**
+     * <pre>
+     *兄弟类3
+     * </pre>
+     *
      * Protobuf type {@code generated.Cat}
      */
     public static final class Builder extends

@@ -5,6 +5,13 @@ option optimize_for = SPEED;
 option java_package = "protobuf.generated";
 option java_outer_classname = "MyDataInfo";
 
+//当有多种类型的对象需要传递时：
+//1.可以在同一个idl中定义多个兄弟类。
+//2.定义一个管理兄弟类的目录类，此类是真实对象的包装，客户端和服务端的数据读写都是通过它来实现的。
+//3.在目录类中为各兄弟类定义枚举。
+//4.在目录类中指定当前传输的类型及兄弟对象。
+
+//目录类，传递的时候都是对目录类的操作
 message MyMessage {
     enum DataType{
         PersonType = 1;
@@ -13,6 +20,8 @@ message MyMessage {
     }
 
     required DataType data_type = 1;
+
+    //oneof关键字类似于optional，表示多选一，读和写都是这个字段
     oneof dataBody {
         Person person = 2;
         Dog dog = 3;
@@ -20,17 +29,20 @@ message MyMessage {
     }
 }
 
+//兄弟类1
 message Person {
     optional string name = 1;
     optional int32 age = 2;
     optional string address = 3;
 }
 
+//兄弟类2
 message Dog {
     optional string name = 1;
     optional int32 leg = 2;
 }
 
+//兄弟类3
 message Cat {
     optional string name = 1;
     optional string city = 2;
